@@ -10,20 +10,20 @@ function FishPage() {
   const dispatch = useDispatch();
 
   useEffect(()=>{
-    dispatch( { type: 'FETCH_LAKES'} )  
+    dispatch( { type: 'FETCH_FISH'} )  
   }, [] );
 
   // access the lakes through our selector
-const lakes = useSelector ( ( store )=>{
-  return store.lake
+const fish = useSelector ( ( store )=>{
+  return store.fish
 })
 
   return (
     <div className="container">
-      <p>Info Page</p>
-      <p>
-        {JSON.stringify( lakes )}
-      </p>
+      <p>Fish Page</p>
+     <p>
+       {JSON.stringify( fish )}
+     </p>
     </div>
   );
 }
