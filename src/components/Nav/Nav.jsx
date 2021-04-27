@@ -14,13 +14,13 @@ function Nav() {
 
   if (user.id != null) {
     loginLinkData.path = '/user';
-    loginLinkData.text = 'Home';
+    loginLinkData.text = 'Profile';
   }
 
   return (
     <div className="nav">
       <Link to="/home">
-        <h2 className="nav-title">Prime Solo Project</h2>
+        <h2 className="nav-title">Gone Fishin'</h2>
       </Link>
       <div>
         <Link className="navLink" to={loginLinkData.path}>

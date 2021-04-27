@@ -8,13 +8,12 @@ CREATE TABLE "user" (
 
 CREATE TABLE "lakes"(
 	"id" serial primary key,
-	"name" varchar(10),
-	"description" varchar(20),
-	"depth" varchar(32)
+	"name" varchar(50),
+	"description" varchar(1000),
+	"depth" varchar(20)
 );
 
-INSERT INTO "lakes" ( name, description, depth ) VALUES ( 'BdeMakaSka', 'Name restored', 'shallow' );
-INSERT INTO "lakes" ( name, description, depth ) VALUES ( 'Cedar', 'Top of the Chain', 'Moderate' ), ('Isles', 'Next in Line', 'DEEP'), ('Brownie', 'Cute little hideaway', 'small but deep');
+INSERT INTO "lakes" ( name, description, depth ) VALUES ( 'Cedar Lake', 'Top of the Chain', '51 ft' ), ('Lake of the Isles', 'Next in Line', '30 ft'), ('Brownie Lake', 'Cute little hideaway', '49.9 ft'), ( 'Bde Maka Ska', 'Name restored', '89 ft' );
 
 CREATE TABLE "fish"(
 	"id" SERIAL PRIMARY KEY,
