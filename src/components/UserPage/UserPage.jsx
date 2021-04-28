@@ -10,8 +10,11 @@ function UserPage() {
     <div className="container">
       <h2>Welcome, {user.username}!</h2>
       <p>Your ID is: {user.id}</p>
-      <h3>MY CATCHES:</h3>
-      <CatchPage />
+        <div>  
+          <h3>MY CATCHES:</h3>
+          <CatchPage /> 
+          <button>ADD CATCH</button>
+        </div>
       <LogOutButton className="btn" />
     </div>
   );

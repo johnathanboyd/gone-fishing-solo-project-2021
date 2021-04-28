@@ -1,6 +1,7 @@
 import React from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import {useSelector} from 'react-redux';
+import LakeList from '../LakeList/LakeList';
 
 function Home() {
   // this component doesn't do much to start, just renders some user reducer info to the DOM
@@ -9,7 +10,10 @@ function Home() {
     <div className="container">
       <h2>Welcome,</h2>
       <h3>MAP CONTAINER</h3>
-      <h3>MAP LIST</h3>
+      <div>
+        <h3>LAKES:</h3>
+        <LakeList />
+      </div>
       <LogOutButton className="btn" />
     </div>
   );

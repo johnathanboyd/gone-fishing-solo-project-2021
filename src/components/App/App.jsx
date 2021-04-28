@@ -15,14 +15,16 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
 import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
-import InfoPage from '../InfoPage/InfoPage';
+import LakeList from '../LakeList/LakeList';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import FishPage from '../FishPage/FishPage';
 import Home from '../Home/Home';
+import LakeDetails from '../LakeDetails/LakeDetails';
 
 import './App.css';
+
 
 function App() {
   const dispatch = useDispatch();
@@ -65,7 +67,7 @@ function App() {
             exact
             path="/info"
           >
-            <InfoPage />
+            <LakeList />
           </ProtectedRoute>
           
           <ProtectedRoute
@@ -110,6 +112,17 @@ function App() {
           
           >
             <Home  />
+          </ProtectedRoute>
+          
+          <ProtectedRoute
+            // with authRedirect:
+            // - if logged in, redirects to "/home"
+            // - else shows RegisterPage at "/registration"
+            exact
+            path="/lakes"
+          
+          >
+            <LakeDetails  />
           </ProtectedRoute>
 
           <ProtectedRoute
