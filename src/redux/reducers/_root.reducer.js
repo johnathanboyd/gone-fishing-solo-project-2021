@@ -4,6 +4,7 @@ import user from './user.reducer';
 import lake from './lake.reducer';
 import fish from './fish.reducer';
 import catches from './catch.reducer';
+import catchItem from './catchItem.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   lake,
   fish,
   catches,
+  catchItem,
 });
 
 export default rootReducer;

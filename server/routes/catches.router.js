@@ -21,6 +21,16 @@ const router = express.Router();
  */
 router.post('/', (req, res) => {
   // POST route code here
+  console.log( 'in /api/catches POST', req.body);
+  let queryString = `INSERT INTO "my_catch" ( user_id, fish_id, lakes_id) VALUES ($1, $2, $3)`
+  pool.query( queryString, [req.body.user_id, req.body.fish_id, req.body.lakes_id])
+  .then(()=>{
+    res.sendStatus(200)
+  })
+  .catch( (err) =>{
+    console.log('ERROR in POST', err )
+    res.sendStatus(500)
+  })
 });
 
 module.exports = router;

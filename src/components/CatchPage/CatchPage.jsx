@@ -7,6 +7,8 @@ function CatchPage() {
     useEffect(()=>{
         dispatch( { type: 'FETCH_CATCH'})
     }, [] );
+
+    
     // access catches through use selector
     const catches = useSelector ( ( store )=>{
         return store.catches
