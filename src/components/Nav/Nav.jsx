@@ -22,6 +22,9 @@ function Nav() {
       <Link to="/home">
         <h2 className="nav-title">Gone Fishin'</h2>
       </Link>
+      <Link to="/home">
+        Home
+      </Link>
       <div>
         <Link className="navLink" to={loginLinkData.path}>
           {loginLinkData.text}
