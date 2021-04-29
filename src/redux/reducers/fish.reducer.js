@@ -1,4 +1,4 @@
-const fishReducer = (state = {}, action) => {
+const fishReducer = (state = [], action) => {
   switch (action.type) {
     case 'SET_FISH':
       return action.payload;

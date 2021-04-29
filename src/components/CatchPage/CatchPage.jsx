@@ -8,7 +8,7 @@ function CatchPage() {
         dispatch( { type: 'FETCH_CATCH'})
     }, [] );
 
-    
+
     // access catches through use selector
     const catches = useSelector ( ( store )=>{
         return store.catches
@@ -16,7 +16,8 @@ function CatchPage() {
 
     return (
         <>
-          {JSON.stringify( catches )}
+          {catches.map((catchData, i) =>
+        <li>{catchData.name}</li>)}
         </>
     );
 }

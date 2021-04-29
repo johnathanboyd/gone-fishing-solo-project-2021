@@ -24,7 +24,7 @@ const lake = useSelector ( ( store )=>{
     <div className="container">
         {lake.map( (lakeData, i) => 
           //<LakeDetails key={i} lakeData={lakeData} />
-          <Link to="/lakes">
+          <Link to="/lakes/">
           <li>{lakeData.name}</li>
           </Link>
         // )}

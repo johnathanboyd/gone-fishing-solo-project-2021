@@ -49,6 +49,14 @@ function App() {
           >
             <AboutPage />
           </Route>
+          <Route
+            // logged in shows InfoPage else shows LoginPage
+            exact
+            path="/fish"
+          >
+            <FishPage />
+          </Route>
+
 
           {/* For protected routes, the view could show one of several things on the same route.
             Visiting localhost:3000/user will show the UserPage if the user is logged in.
@@ -70,14 +78,7 @@ function App() {
             <LakeList />
           </ProtectedRoute>
           
-          <ProtectedRoute
-            // logged in shows InfoPage else shows LoginPage
-            exact
-            path="/fish"
-          >
-            <FishPage />
-          </ProtectedRoute>
-
+          
           {/* When a value is supplied for the authRedirect prop the user will
             be redirected to the path supplied when logged in, otherwise they will
             be taken to the component and path supplied. */}
@@ -103,7 +104,7 @@ function App() {
             <RegisterPage />
           </ProtectedRoute>
           
-          <ProtectedRoute
+          <Route
             // with authRedirect:
             // - if logged in, redirects to "/home"
             // - else shows RegisterPage at "/registration"
@@ -112,7 +113,7 @@ function App() {
           
           >
             <Home  />
-          </ProtectedRoute>
+          </Route>
           
           <ProtectedRoute
             // with authRedirect:

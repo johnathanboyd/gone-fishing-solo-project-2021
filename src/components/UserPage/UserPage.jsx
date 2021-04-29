@@ -3,6 +3,7 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 import {useSelector, useDispatch} from 'react-redux';
 import CatchPage from '../CatchPage/CatchPage';
 import Dropdown from '../Dropdown/Dropdown';
+import FishPage from '../FishPage/FishPage';
 
 function UserPage() {
   const dispatch = useDispatch();
@@ -21,31 +22,34 @@ function UserPage() {
   }
   // end to be moved to separate container
 
-  //temp list//
-  const fish = [
-    {
-      id:1,
-      value: 'Bass'
-    },
-    {
-      id:2,
-      value: 'Perch'
-    },
-    {
-      id:3,
-      value: 'Bluegill'
-    },
-  ];
-  //to be deleted//
+  // //temp list//
+  // const fish = [
+  //   {
+  //     id:1,
+  //     value: 'Bass'
+  //   },
+  //   {
+  //     id:2,
+  //     value: 'Perch'
+  //   },
+  //   {
+  //     id:3,
+  //     value: 'Bluegill'
+  //   },
+  // ];
+  // //to be deleted//
 
   return (
     <div className="container">
       <h2>Welcome, {user.username}!</h2>
       <p>Your ID is: {user.id}</p>
         <div>  
-          <h3>MY CATCHES:</h3>
-          <CatchPage /> 
-          <Dropdown title="Fish Type" items={fish}/>
+         <FishPage />
+        <div className="catch-form">
+          <input placeholder="Fish"/>
+          <input placeholder="lake"/>
+          <button>ADD to Catch</button>
+        </div>
         
         </div>
       <LogOutButton className="btn" />

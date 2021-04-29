@@ -19,7 +19,7 @@ function Dropdown({ title, items =[], multiSelect = false}) {
             selectionAfterRemoval = selectionAfterRemoval.filter(
               current => current.id !== item.id
             );
-            setSelection([ ... selectionAfterRemoval])
+            setSelection([ ... selectionAfterRemoval]);
         }
     }
 

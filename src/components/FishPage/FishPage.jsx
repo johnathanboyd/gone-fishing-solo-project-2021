@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux';
+import FishItem from '../FishItem/FishItem';
 
 // This is one of our simplest components
 // It doesn't have local state
@@ -20,9 +21,9 @@ const fish = useSelector ( ( store )=>{
 
   return (
     <div className="container">
-      <p>Fish Page</p>
+      <h2>Fish Page</h2>
      <p>
-       {JSON.stringify( fish )}
+       {fish.map( (fish, index )=><FishItem key={index} fish={fish}/>)}
      </p>
     </div>
   );
