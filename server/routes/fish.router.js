@@ -12,9 +12,20 @@ const userStrategy = require('../strategies/user.strategy');
  */
  router.get('/', (req, res) => {
   // GET route code here
-  console.log( '/api/fish GET hit');
+  console.log( '/api/fish GET hit', req.params.id);
   let queryString = `SELECT * FROM "fish"`;
   pool.query (queryString).then ( (results)=>{
+    res.send( results.rows );
+  }).catch ((err)=>{
+    console.log(err)
+    res.send( 500 );
+  })
+});
+  router.get('/specific/:id', (req, res) => {
+  // GET route code here
+  console.log( '/api/fish/specific GET hit', req.params.id);
+  let queryString = `SELECT * FROM "fish" WHERE id = $1`;
+  pool.query (queryString, [req.params.id]).then ( (results)=>{
     res.send( results.rows );
   }).catch ((err)=>{
     console.log(err)

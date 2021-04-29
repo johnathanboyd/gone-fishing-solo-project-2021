@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import FishItem from '../FishItem/FishItem';
+import {useParams} from 'react-router-dom';
 
 // This is one of our simplest components
 // It doesn't have local state
@@ -9,6 +10,7 @@ import FishItem from '../FishItem/FishItem';
 
 function FishPage() {
   const dispatch = useDispatch();
+  const params = useParams();
 
   useEffect(()=>{
     dispatch( { type: 'FETCH_FISH'} )  

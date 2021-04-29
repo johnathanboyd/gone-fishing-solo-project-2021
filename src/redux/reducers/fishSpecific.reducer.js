@@ -1,6 +1,6 @@
-const baitReducer = (state = [{}], action) => {
+const fishSpecificReducer = (state = [], action) => {
   switch (action.type) {
-    case 'SET_BAITS':
+    case 'SET_SINGLE_FISH':
       return action.payload;
     default:
       return state;
@@ -9,4 +9,4 @@ const baitReducer = (state = [{}], action) => {
 
 // user will be on the redux state at:
 // state.user
-export default baitReducer;
+export default fishSpecificReducer;

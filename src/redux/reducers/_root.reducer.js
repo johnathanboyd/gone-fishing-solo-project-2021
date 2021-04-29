@@ -5,6 +5,7 @@ import bait from './bait.reducer';
 import fish from './fish.reducer';
 import catches from './catch.reducer';
 import catchItem from './catchItem.reducer';
+import specificFish from './fishSpecific.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -19,6 +20,7 @@ const rootReducer = combineReducers({
   fish,
   catches,
   catchItem,
+  specificFish
 });
 
 export default rootReducer;

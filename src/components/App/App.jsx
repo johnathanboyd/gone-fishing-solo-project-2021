@@ -22,6 +22,7 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 import FishPage from '../FishPage/FishPage';
 import Home from '../Home/Home';
 import LakeDetails from '../LakeDetails/LakeDetails';
+import FishSpecific from '../FishSpecific/FishSpecific';
 
 import './App.css';
 
@@ -56,6 +57,14 @@ function App() {
           >
             <FishPage />
           </Route>
+          
+          <Route
+            // logged in shows InfoPage else shows LoginPage
+            exact
+            path="/fish/:id"
+          >
+            <FishSpecific />
+          </Route>
 
 
           {/* For protected routes, the view could show one of several things on the same route.
@@ -75,7 +84,7 @@ function App() {
             exact
             path="/info"
           >
-            <LakeList />
+          
           </ProtectedRoute>
           
           
@@ -115,17 +124,6 @@ function App() {
             <Home  />
           </Route>
           
-          <ProtectedRoute
-            // with authRedirect:
-            // - if logged in, redirects to "/home"
-            // - else shows RegisterPage at "/registration"
-            exact
-            path="/lakes"
-          
-          >
-            <LakeDetails  />
-          </ProtectedRoute>
-
           <ProtectedRoute
             // with authRedirect:
             // - if logged in, redirects to "/user"
