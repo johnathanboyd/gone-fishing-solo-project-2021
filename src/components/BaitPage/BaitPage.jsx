@@ -1,25 +1,24 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 
-function CatchPage() {
+function BaitPage() {
     const dispatch = useDispatch();
 
     useEffect(()=>{
-        dispatch( { type: 'FETCH_CATCH'})
+        dispatch( { type: 'FETCH_BAITS'})
     }, [] );
 
 
     // access catches through use selector
-    const catches = useSelector ( ( store )=>{
-        return store.catches
+    const baits = useSelector ( ( store )=>{
+        return store.bait
     })
 
     return (
         <>
-          {catches.map((catchData, i) =>
-        <li>{catchData.name}</li>)}
+        {JSON.stringify(baits)}
         </>
     );
 }
 
-export default CatchPage;
+export default BaitPage;

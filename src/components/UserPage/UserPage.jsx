@@ -1,7 +1,7 @@
 import React from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import {useSelector, useDispatch} from 'react-redux';
-import CatchPage from '../CatchPage/CatchPage';
+import CatchPage from '../BaitPage/BaitPage';
 import Dropdown from '../Dropdown/Dropdown';
 import FishPage from '../FishPage/FishPage';
 

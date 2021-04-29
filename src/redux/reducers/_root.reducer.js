@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import errors from './errors.reducer';
 import user from './user.reducer';
-import lake from './lake.reducer';
+import bait from './bait.reducer';
 import fish from './fish.reducer';
 import catches from './catch.reducer';
 import catchItem from './catchItem.reducer';
@@ -15,7 +15,7 @@ import catchItem from './catchItem.reducer';
 const rootReducer = combineReducers({
   errors, // contains registrationMessage and loginMessage
   user, // will have an id and username if someone is logged in
-  lake,
+  bait,
   fish,
   catches,
   catchItem,

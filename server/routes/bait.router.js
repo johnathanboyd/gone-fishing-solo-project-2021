@@ -13,8 +13,8 @@ const userStrategy = require('../strategies/user.strategy');
  */
 router.get('/', (req, res) => {
   // GET route code here
-  console.log( '/api/lakes GET hit');
-  let queryString = `SELECT * FROM "lakes"`;
+  console.log( '/api/baits GET hit');
+  let queryString = `SELECT * FROM "baits"`;
   pool.query (queryString).then ( (results)=>{
     res.send( results.rows );
   }).catch ((err)=>{

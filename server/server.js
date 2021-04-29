@@ -9,7 +9,7 @@ const passport = require('./strategies/user.strategy');
 
 // Route includes
 const userRouter = require('./routes/user.router');
-const lakeRouter = require('./routes/lake.router');
+const baitRouter = require('./routes/bait.router');
 const fishRouter = require('./routes/fish.router');
 const catchRouter = require('./routes/catches.router');
 
@@ -26,7 +26,7 @@ app.use(passport.session());
 
 /* Routes */
 app.use('/api/user', userRouter);
-app.use('/api/lake', lakeRouter );
+app.use('/api/baits', baitRouter );
 app.use('/api/fish', fishRouter);
 app.use('/api/catches', catchRouter);
 
