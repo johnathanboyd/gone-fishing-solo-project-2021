@@ -18,7 +18,7 @@ function* fetchSingleFish(action) {
   try {
     const response = yield axios.get(`/api/fish/specific/${fishId}`);
     console.log('response data', response.data)
-    //yield put({ type: 'SET_SINGLE_FISH', payload: response.data})
+    yield put({ type: 'SET_SINGLE_FISH', payload: response.data})
   } catch (error) {
     console.log('User get request failed', error)
   }

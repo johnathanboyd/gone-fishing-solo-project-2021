@@ -11,10 +11,11 @@ function FishItem(props) {
   }
 
     return (
-        <>
-          <img className="image" src={props.fish.image_path} onClick={()=>goFishSpecific(props.fish.id)}/>
-          <li>{props.fish.name}, {props.fish.scientific_name}</li>  
-        </>
+        <div className="fishCard" onClick={()=>goFishSpecific(props.fish.id)}>
+          <img className="image" src={props.fish.image_path} />
+            <h3>{props.fish.name}</h3>
+            <h4>{props.fish.scientific_name}</h4>
+        </div>
     );
 }
 

@@ -11,7 +11,7 @@ const passport = require('./strategies/user.strategy');
 const userRouter = require('./routes/user.router');
 const baitRouter = require('./routes/bait.router');
 const fishRouter = require('./routes/fish.router');
-const catchRouter = require('./routes/catches.router');
+
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -28,7 +28,7 @@ app.use(passport.session());
 app.use('/api/user', userRouter);
 app.use('/api/baits', baitRouter );
 app.use('/api/fish', fishRouter);
-app.use('/api/catches', catchRouter);
+
 
 // Serve static files
 app.use(express.static('build'));

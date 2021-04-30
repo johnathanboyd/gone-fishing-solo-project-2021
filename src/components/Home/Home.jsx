@@ -11,7 +11,6 @@ function Home() {
   
   return (
     <div className="container">
-      <h2>Welcome,</h2>
       <div>
         <h3>FISH:</h3>
         <FishPage />

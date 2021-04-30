@@ -35,8 +35,17 @@ const userStrategy = require('../strategies/user.strategy');
 /**
  * POST route template
  */
-router.post('/', (req, res) => {
+router.post('/add', (req, res) => {
   // POST route code here
+  const name = req.body.name;
+  const scientificName = req.body.scientificName;
+  const queryText = `INSERT INTO "fish" ( name, scientific_name ) VALUES ($1, $2)`;
+  pool.query(queryText, [name, scientificName])
+  .then(() => res.sendStatus(201))
+  .catch((err) => {
+    console.log('Adding fish fialed: ', err)
+    res.sendStatus(500);
+  });
 });
 
 module.exports = router;
