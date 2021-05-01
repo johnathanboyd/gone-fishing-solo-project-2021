@@ -11,7 +11,8 @@ function FishSpecificItem(props) {
   if(user.id){
     return (
         <>
-          <h1>{props.fish.name}<Dropdown title='update' items={[]}/></h1>
+          <Dropdown title='update'/>
+          <h1>{props.fish.name}</h1>
           <h3>{props.fish.scientific_name}</h3>  
           <img className="image" src={props.fish.image_path}/>
           <BaitPage />          

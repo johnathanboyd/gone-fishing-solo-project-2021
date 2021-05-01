@@ -1,30 +1,42 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import {useParams, useHistory} from 'react-router-dom';
 
 
-function FishForm(){
-    const [name, setName] = useState( '' );
-    const [scientificName, setScientificName] = useState( '' );
-
+function UpdateForm(){
+    const params = useParams();
     const dispatch = useDispatch();
+    const history = useHistory();
 
+    const fish = useSelector( ( store )=>{
+      return store.specificFish
+    })
 
-    const submitFish = (event) =>{
+    const [name, setName] = useState( '' );
+    // const [scientificName, setScientificName] = useState( '' );
+    // const [scientificName, setScientificName] = useState( '' );
+    // const [image, setImage] = useState( '' );
+
+    const updateFish = (event) =>{
       event.preventDefault();
-      
+      console.log(params)
+      let updateFish={
+        name: name,
+        id: fish[0].id
+      }
       dispatch({
-        type: 'SUBMIT_FISH',
-        payload: {
-            name: name,
-            scientificName: scientificName
-        }
+        type: 'UPDATE_FISH',
+        payload: updateFish
+          // scientificName: scientificName,
+          // image: image,
       })
-    }
+     }
+    
     
 
     return(
-      <form className="formPanel" onSubmit={submitFish}>
-        <h2>Submit New Fish</h2>
+      <form className="formPanel" onSubmit={updateFish}>
+        <h2>UpdateFish</h2>
         <div>
           <label htmlFor="name">
               Name:
@@ -36,7 +48,7 @@ function FishForm(){
               />
           </label>
         </div>
-        <div>
+        {/* <div>
           <label htmlFor="scientificName">
               Scientific Name:
               <input
@@ -48,22 +60,22 @@ function FishForm(){
           </label>
         </div>
         <div>
+          <label htmlFor="image">
+              Image:
+              <input
+                type="text"
+                name="image"
+                value={image}
+                onChange={(event) => setImage(event.target.value)}
+              />
+          </label>
+        </div> */}
+        <div>
             <input className="btn" type="submit" name="submit" />
         </div>
 
       </form>
-    // <>
-    // <input 
-    // type="text"
-    // value={name}
-    // onChange={handleNameChange}
-    // placeholder="name"/>
-    // <input/>
-
-    // <input/>
-    // <button>ADD FISH</button>
-    // </>
 )
 }
 
-export default FishForm
+export default UpdateForm

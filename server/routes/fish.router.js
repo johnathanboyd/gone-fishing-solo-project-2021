@@ -32,6 +32,28 @@ const userStrategy = require('../strategies/user.strategy');
     res.send( 500 );
   })
 });
+
+/**
+ * PUT route code
+ */
+router.put('/specific/:id/update',(req, res) =>{
+  // PUT route code here
+  console.log( '/api/update PUT hit', req.body)
+  const name = req.body.name;
+  const scientificName = req.body.scientificName;
+  const image = req.body.image
+  const id =req.body.id
+
+  console.log( req.body.id)
+  const queryText = `UPDATE "fish" SET "name" = $1
+        WHERE "id" = $2`;     
+  pool.query( queryText, [name, id])
+  .then(() => res.sendStatus(200))
+  .catch((err) => {
+    console.log('Update PUT failed', err);
+    res.sendStatus(500);  
+  })
+})
 /**
  * POST route template
  */
@@ -39,8 +61,9 @@ router.post('/add', (req, res) => {
   // POST route code here
   const name = req.body.name;
   const scientificName = req.body.scientificName;
-  const queryText = `INSERT INTO "fish" ( name, scientific_name ) VALUES ($1, $2)`;
-  pool.query(queryText, [name, scientificName])
+  const image = req.body.image;
+  const queryText = `INSERT INTO "fish" ( name, scientific_name, image_path ) VALUES ($1, $2, $3)`;
+  pool.query(queryText, [name, scientificName, image])
   .then(() => res.sendStatus(201))
   .catch((err) => {
     console.log('Adding fish fialed: ', err)

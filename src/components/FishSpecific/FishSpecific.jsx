@@ -12,7 +12,7 @@ function FishSpecific(){
           type: 'FETCH_SINGLE_FISH',
           payload: params.id
       })
-  })
+  }, [] );
 
   const fish = useSelector ( ( store )=>{
       return store.specificFish

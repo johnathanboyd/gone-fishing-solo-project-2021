@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 function FishForm(){
     const [name, setName] = useState( '' );
     const [scientificName, setScientificName] = useState( '' );
+    const [image, setImage] = useState( '' );
 
     const dispatch = useDispatch();
 
@@ -16,7 +17,8 @@ function FishForm(){
         type: 'SUBMIT_FISH',
         payload: {
             name: name,
-            scientificName: scientificName
+            scientificName: scientificName,
+            image: image,
         }
       })
     }
@@ -44,6 +46,17 @@ function FishForm(){
                 name="scientificName"
                 value={scientificName}
                 onChange={(event) => setScientificName(event.target.value)}
+              />
+          </label>
+        </div>
+        <div>
+          <label htmlFor="image">
+              Image Url:
+              <input
+                type="text"
+                name="image"
+                value={image}
+                onChange={(event) => setImage(event.target.value)}
               />
           </label>
         </div>

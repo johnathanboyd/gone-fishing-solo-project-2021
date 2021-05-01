@@ -14,7 +14,7 @@ function Home() {
       <div>
         <h3>FISH:</h3>
         <FishPage />
-        <BaitPage />
+        
       </div>
       <LogOutButton className="btn" />
     </div>
