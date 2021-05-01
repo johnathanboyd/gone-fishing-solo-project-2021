@@ -23,6 +23,20 @@ router.get('/', (req, res) => {
   })
 });
 
+router.get('/specific/:id', (req, res) => {
+// GET route code here
+console.log( '/api/baits/specific GET hit', req.params.id);
+let queryString = `SELECT "baits".name, "baits".type, "baits".image_path FROM "baits"
+JOIN "fish_baits" ON "fish_baits".baits_id = "baits".id
+JOIN "fish" ON "fish_baits".fish_id = "fish".id
+WHERE "fish".id = $1;`;
+pool.query (queryString, [req.params.id]).then ( (results)=>{
+  res.send( results.rows );
+}).catch ((err)=>{
+  console.log(err)
+  res.send( 500 );
+})
+});
 /**
  * POST route template
  */
