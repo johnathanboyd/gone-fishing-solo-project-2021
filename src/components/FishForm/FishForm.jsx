@@ -5,7 +5,9 @@ import { useDispatch } from 'react-redux';
 function FishForm(){
     const [name, setName] = useState( '' );
     const [scientificName, setScientificName] = useState( '' );
+    const [description, setDescription] = useState( '' );
     const [image, setImage] = useState( '' );
+    const [forage, setForage] = useState( '' );
 
     const dispatch = useDispatch();
 
@@ -18,6 +20,8 @@ function FishForm(){
         payload: {
             name: name,
             scientificName: scientificName,
+            description: description,
+            forage: forage,
             image: image,
         }
       })
@@ -46,6 +50,28 @@ function FishForm(){
                 name="scientificName"
                 value={scientificName}
                 onChange={(event) => setScientificName(event.target.value)}
+              />
+          </label>
+        </div>
+        <div>
+          <label htmlFor="description">
+              Description:
+              <input
+                type="text"
+                name="description"
+                value={description}
+                onChange={(event) => setDescription(event.target.value)}
+              />
+          </label>
+        </div>
+        <div>
+          <label htmlFor="forage">
+              Natural Forage:
+              <input
+                type="text"
+                name="Forage"
+                value={forage}
+                onChange={(event) => setForage(event.target.value)}
               />
           </label>
         </div>

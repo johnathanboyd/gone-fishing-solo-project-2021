@@ -41,13 +41,20 @@ router.put('/specific/:id/update',(req, res) =>{
   console.log( '/api/update PUT hit', req.body)
   const name = req.body.name;
   const scientificName = req.body.scientificName;
+  const description = req.body.description;
   const image = req.body.image
+  const forage = req.body.forage
   const id =req.body.id
 
   console.log( req.body.id)
-  const queryText = `UPDATE "fish" SET "name" = $1
-        WHERE "id" = $2`;     
-  pool.query( queryText, [name, id])
+  const queryText = `UPDATE "fish" 
+    SET "name" = $1, 
+      "scientific_name" = $2, 
+      "description" = $3, 
+     "image_path" = $4,
+     "forage" =$5
+    WHERE "id" = $6`;     
+  pool.query( queryText, [name, scientificName, description, image, forage, id])
   .then(() => res.sendStatus(200))
   .catch((err) => {
     console.log('Update PUT failed', err);

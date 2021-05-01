@@ -16,7 +16,7 @@ function BaitPage() {
 
     return (
         <>
-        {JSON.stringify(baits)}
+        {baits.map((baits, index)=><img  key={index} src={baits.image_path}/>)}
         </>
     );
 }

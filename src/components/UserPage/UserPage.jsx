@@ -21,7 +21,6 @@ function UserPage() {
       <p>Your ID is: {user.id}</p>
         <div>  
          <FishForm />
-         <FishPage />
         </div>
       <LogOutButton className="btn" />
     </div>

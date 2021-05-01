@@ -12,16 +12,21 @@ function UpdateForm(){
       return store.specificFish
     })
 
-    const [name, setName] = useState( '' );
-    // const [scientificName, setScientificName] = useState( '' );
-    // const [scientificName, setScientificName] = useState( '' );
-    // const [image, setImage] = useState( '' );
+    const [name, setName] = useState( fish[0].name );
+    const [scientificName, setScientificName] = useState( fish[0].scientific_name );
+    const [description, setDescription] = useState( fish[0].description );
+    const [image, setImage] = useState( fish[0].image_path );
+    const [forage, setForage] = useState( fish[0].forage );
 
     const updateFish = (event) =>{
       event.preventDefault();
       console.log(params)
       let updateFish={
         name: name,
+        scientificName: scientificName,
+        description: description,
+        forage: forage,
+        image: image,
         id: fish[0].id
       }
       dispatch({
@@ -48,7 +53,7 @@ function UpdateForm(){
               />
           </label>
         </div>
-        {/* <div>
+        <div>
           <label htmlFor="scientificName">
               Scientific Name:
               <input
@@ -56,6 +61,28 @@ function UpdateForm(){
                 name="scientificName"
                 value={scientificName}
                 onChange={(event) => setScientificName(event.target.value)}
+              />
+          </label>
+        </div>
+        <div>
+          <label htmlFor="description">
+              Description:
+              <input
+                type="text"
+                name="description"
+                value={description}
+                onChange={(event) => setDescription(event.target.value)}
+              />
+          </label>
+        </div>
+        <div>
+          <label htmlFor="forage">
+              Natural Forage:
+              <input
+                type="text"
+                name="Forage"
+                value={forage}
+                onChange={(event) => setForage(event.target.value)}
               />
           </label>
         </div>
@@ -69,7 +96,7 @@ function UpdateForm(){
                 onChange={(event) => setImage(event.target.value)}
               />
           </label>
-        </div> */}
+        </div>
         <div>
             <input className="btn" type="submit" name="submit" />
         </div>

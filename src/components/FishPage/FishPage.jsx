@@ -24,9 +24,9 @@ const fish = useSelector ( ( store )=>{
   return (
     <div className="container">
       <h2>Fish Page</h2>
-     <p>
+     <div>
        {fish.map( (fish, index )=><FishItem key={index} fish={fish}/>)}
-     </p>
+     </div>
     </div>
   );
 }
