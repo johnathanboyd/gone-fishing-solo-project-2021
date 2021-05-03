@@ -3,9 +3,11 @@ import loginSaga from './login.saga';
 import registrationSaga from './registration.saga';
 import userSaga from './user.saga';
 import baitSaga from './bait.saga';
+import baitAddSaga from './baitAdd.saga';
 import fishSaga from './fish.saga';
 import fishAddSaga from './fishAdd.saga'
 import fishUpdateSaga from './fishUpdate.saga';
+
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -23,5 +25,6 @@ export default function* rootSaga() {
     fishSaga(),
     fishAddSaga(),
     fishUpdateSaga(),
+    baitAddSaga(),
   ]);
 }

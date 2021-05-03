@@ -14,7 +14,7 @@ function FishSpecificItem(props) {
           <Dropdown title='update'/>
           <h1>{props.fish.name}</h1>
           <h3>{props.fish.scientific_name}</h3>  
-          <img className="image" src={props.fish.image_path}/>
+          <img className="fishImage" src={props.fish.image_path}/>
         </>
     );
   }
@@ -23,7 +23,7 @@ function FishSpecificItem(props) {
       <>
       <h1>{props.fish.name}</h1>
       <h3>{props.fish.scientific_name}</h3>  
-      <img className="image" src={props.fish.image_path}/>      
+      <img className="fishImage" src={props.fish.image_path}/>      
     </>
     )
   }

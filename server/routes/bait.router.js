@@ -40,8 +40,27 @@ pool.query (queryString, [req.params.id]).then ( (results)=>{
 /**
  * POST route template
  */
-router.post('/', (req, res) => {
+router.post('/add', (req, res) => {
   // POST route code here
+  const name = req.body.name;
+  const type= req.body.type;
+  const style = req.body.style;
+  const depth = req.body.depth;
+  const season = req.body.depth;
+  const image = req.body.image;
+  const example = req.body.example;
+  const retrieval = req.body.retrieval;
+  const description = req.body.description;
+
+  const queryText = 
+  `INSERT INTO "baits" () 
+  VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)`;
+  pool.query(queryText, [name, type, style, depth, season, image, example, retrieval, description ])
+  .then(() => res.sendStatus(201)) 
+  .catch((err) => {
+    console.log('Adding fish fialed: ', err)
+    res.sendStatus(500);
+  });
 });
 
 module.exports = router;

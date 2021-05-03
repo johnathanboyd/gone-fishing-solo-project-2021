@@ -9,12 +9,12 @@ function Nav() {
 
   let loginLinkData = {
     path: '/login',
-    text: 'Login / Register',
+    text: 'Admin',
   };
 
   if (user.id != null) {
     loginLinkData.path = '/user';
-    loginLinkData.text = 'Profile';
+    loginLinkData.text = `${user.username}`;
   }
 
   return (
@@ -22,19 +22,19 @@ function Nav() {
       <Link to="/home">
         <h2 className="nav-title">Gone Fishin'</h2>
       </Link>
-      <Link to="/home">
+      <div>
+      <Link className="navLink" to="/home">
         Home
       </Link>
-      <div>
         <Link className="navLink" to={loginLinkData.path}>
           {loginLinkData.text}
         </Link>
 
         {user.id && (
           <>
-            <Link className="navLink" to="/info">
+            {/* <Link className="navLink" to="/info">
               Info Page
-            </Link>
+            </Link> */}
             <LogOutButton className="navLink" />
           </>
         )}

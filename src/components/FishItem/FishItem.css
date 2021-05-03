@@ -1,0 +1,10 @@
+.fishCard {
+    background-color: gray;
+    display: inline-grid;
+    padding: 10px; 
+    margin: 15px;
+}
+
+.image {
+    width: 300px
+}

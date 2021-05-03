@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {useParams, useHistory} from 'react-router-dom';
+import {useParams, useHistory, Link} from 'react-router-dom';
 
 
 function UpdateForm(){
@@ -36,7 +36,9 @@ function UpdateForm(){
           // image: image,
       })
      }
-    
+    const goHome =() =>{
+      history.push('/home');
+    }
     
 
     return(
@@ -98,7 +100,7 @@ function UpdateForm(){
           </label>
         </div>
         <div>
-            <input className="btn" type="submit" name="submit" />
+          <input className="btn" type="submit" name="submit" />  
         </div>
 
       </form>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {useSelector} from 'react-redux';
 import {useParams, useHistory} from 'react-router-dom';
+import './FishItem.css'
 
 function FishItem(props) {
   const params = useParams();
