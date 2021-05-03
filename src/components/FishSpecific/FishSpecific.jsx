@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import {useParams} from 'react-router-dom';
 import FishSpecificItem from '../FishSpecificItem/FishSpecificItem';
 import BaitPage from '../BaitPage/BaitPage';
+import './FishSpecific.css'
+
 
 function FishSpecific(){
   const dispatch = useDispatch();
@@ -26,7 +28,9 @@ function FishSpecific(){
 
   return (
       <>
+        <div className="info">
         {fish.map( (fish, index)=><FishSpecificItem key ={index} fish={fish}/>)}
+        </div>
         <BaitPage />
       </>
   )

@@ -1,4 +1,9 @@
 .dd-header {
-    background-color: grey; 
+    background-color: #DADCCA; 
     padding: 15px 20px 15px 20px;
+}
+
+.dd-header_action {
+    align-items: right;
+    
 }

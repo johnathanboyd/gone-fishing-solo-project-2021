@@ -1,0 +1,8 @@
+.baitImage {
+    display: inline-grid;
+    height: 200px;
+}
+
+.Item {
+    display: inline-grid;
+}

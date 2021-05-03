@@ -3,7 +3,7 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 import {useSelector} from 'react-redux';
 import FishPage from '../FishPage/FishPage';
 import BaitPage from '../BaitPage/BaitPage';
-
+import './Home.css'
 
 function Home() {
   // this component doesn't do much to start, just renders some user reducer info to the DOM
@@ -11,8 +11,10 @@ function Home() {
   
   return (
     <div className="container">
+      <div className="coverImage">
+      </div>
       <div>
-        <h3>FISH:</h3>
+        <h3>What would you like to catch?</h3>
         <FishPage />
         
       </div>

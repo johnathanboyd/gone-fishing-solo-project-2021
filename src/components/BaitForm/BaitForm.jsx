@@ -36,7 +36,7 @@ function BaitForm(){
         }
         return(
             <form className="formPanel" onSubmit={submitBait}>
-        <h2>Submit New Fish</h2>
+        <h2>Submit New Bait</h2>
         <div>
           <label htmlFor="name">
               Name:
