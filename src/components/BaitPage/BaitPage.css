@@ -1,8 +1,12 @@
 .baitImage {
-    display: inline-grid;
+    border-radius: 15px;
     height: 200px;
+    margin-left: 15px;
 }
 
-.Item {
-    display: inline-grid;
+.BaitCard {
+    background-color: #DADCCA;
+    margin: 15px;
+    padding: 10px;
+
 }

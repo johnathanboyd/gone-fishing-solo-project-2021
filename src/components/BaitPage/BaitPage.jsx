@@ -16,18 +16,19 @@ function BaitPage() {
     return (
         <>
         <div className="BaitCard">
+            <h2>Effective Baits:</h2>
             {baits.map((baits, index)=>
-              <>
+              <div className="container">
                 <div className="Item">
-                  <h4>{baits.name}</h4>
+                  <h3>{baits.name}</h3>
                   <img className="baitImage" key={index} src={baits.image_path}/>
                 </div>
                 <div>
                   <p><strong>Type:</strong> {baits.type}</p>
                   <p><strong>Style:</strong> {baits.style}</p>
-                  <p><style>Example Bait:</style> "{baits.example}"</p>
+                  <p><strong>Example Bait:</strong> "{baits.example}"</p>
                 </div>
-              </>
+              </div>
             )}
         </div>
         </>
